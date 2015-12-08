@@ -4,6 +4,7 @@ var IDs = require('./values.js');
 
 /*
     backpacktf.queryAPI()
+    Queries the backpack.tf API with a given method and parameters
     Parameters: 
       method: the method you are calling the API with
       v: version of the method. i.e. v4
@@ -31,6 +32,7 @@ function queryAPI(method, v, key, format, adds, callback) {
 
 /*
     backpacktf.getMarketPrices()
+    Uses the backpack.tf api to get SCM data.
     Parameters:
       key: backpack.tf api key
       appid: steam's numeric identifier for the game
@@ -50,6 +52,19 @@ function getMarketPrices(key, appid, callback) {
     }
   });
 }
+
+/*
+    backpacktf.getBPPrices()
+    Retrieves backpack.tf price data for specified appid.
+    Parameters:
+      key: backpack.tf api key
+      appid: game id
+      callback: called when prices are recieved
+        Callback arguments:
+          err: an Error object with the reason for
+            failure, undefined on success
+          data: an Object containing the response
+*/
 
 function getBPPrices(key, appid, callback) {
   queryAPI('IGetPrices', 'v4', key, 'json', '&appid=' + appid, function(data) {
