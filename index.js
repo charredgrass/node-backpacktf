@@ -51,7 +51,7 @@ function getMarketPrices(key, appid, callback) {
   });
 }
 
-function getBPPrices(key, appid) {
+function getBPPrices(key, appid, callback) {
   queryAPI('IGetPrices', 'v4', key, 'json', '&appid=' + appid, function(data) {
     if (data.response.success === 0) {
       callback(new Error(data.response.message));
