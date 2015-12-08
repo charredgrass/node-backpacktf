@@ -1,0 +1,14 @@
+{
+	"name": "backpacktf",
+	"version": "0.0.2",
+	"description": "backpack.tf data-grabber for node",
+	"keywords": ["steam", "http"],
+	"homepage": "github.com/charredgrass/node-backpacktf",
+	"license": "GPL-2.0",
+	"author": {
+		"name": "Maxwell Chow",
+		"email": "maxchowla@gmail.com",
+		"url": "charredgrass.github.io"
+	},
+	"main":"./index.js"
+}
