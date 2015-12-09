@@ -94,7 +94,7 @@ function getUser(key, steamids, callback) {
     if (data.response.success === 0) {
       callback(new Error(data.response.message));
     } else {
-      callback(undefined, data)
+      callback(undefined, data);
     }
   });
 }
