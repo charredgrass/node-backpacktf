@@ -8,7 +8,9 @@ Install this module from npm using `npm install backpacktf`.
 
 Initialize module like so:
 
-    var backpacktf = require('backpacktf');
+```JavaScript
+var backpacktf = require('backpacktf');
+```
 
 And call methods off `backpacktf`.
 
