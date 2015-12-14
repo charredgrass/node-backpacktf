@@ -18,7 +18,11 @@ To use methods from this module, you need a [backpack.tf API key](http://backpac
 
 ###AppIDs
 
-An object containing constants representing Steam App IDs. For instance, if you want the AppID for TF2 you could use ```backpacktf.AppIDs.TF2``` instead.
+An object containing constants representing Steam App IDs. For instance, if you want the AppID for TF2 you could use `backpacktf.AppIDs.TF2` instead of `440`.
+
+###Quality
+
+backpack.tf uses these quality IDs as keys in the json returned for TF2 prices. 
 
 #Methods
 
