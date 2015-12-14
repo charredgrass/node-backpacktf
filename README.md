@@ -31,7 +31,7 @@ backpack.tf uses these quality IDs as keys in the json returned for TF2 prices.
 Retrieves Steam Community Market data in a readable format containing all items for a given game.
 
 * `key` - your backpack.tf API key
-* `appID` - Steam's numeric identifier for the game (i.e. 440 for TF2 and 730 for CS:GO)
+* `appID` - Steam's numeric identifier for the game (i.e. 440 for TF2 and 730 for CS:GO, alternatively `backpacktf.AppIDs.TF2`, see AppID enums)
 * Callback is called with 2 parameters: an Error object (undefined on success), and an Object containing response data.
 
 It is strongly reccomended that you save this data to a local JSON file, or at least a local. It is not something you want to download each time you need the data (and there is a time limit on the method).
