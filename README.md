@@ -1,4 +1,7 @@
 # node-backpacktf
+
+[![Liscence](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/charredgrass/node-backpacktf/blob/master/LICENSE)
+
 A node.js wrapper to get data from the backpack.tf API.
 
 #Usage
