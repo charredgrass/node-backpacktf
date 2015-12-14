@@ -15,6 +15,7 @@ var IDs = require('./values.js');
       callback: called when API responds.
         Callback arguments:
           data: an Object containing the response
+    Not included in module.exports.
  */
 
 function queryAPI(method, v, key, format, adds, callback) {
