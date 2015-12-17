@@ -55,7 +55,11 @@ It is strongly reccomended that you save this data to a local JSON file, or at l
 
 ###getBPPrices(key, appID, callback)
 
-Identical to `backpacktf.getMarketPrices`. 
+Identical to `backpacktf.getMarketPrices`, but instead retrieves backpack.tf community pricings (and in a different format of object)
+
+###getCurrencies(key, appID, callback)
+
+Identical to `backpacktf.getMarketPrices`, but instead retrieves currency data from backpack.tf.
 
 ###getUser(key, steamIDs, callback)
 

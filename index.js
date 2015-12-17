@@ -100,6 +100,16 @@ function getUser(key, steamids, callback) {
   });
 }
 
+function getCurrencies(key, appid, callback) {
+  queryAPI('IGetCurrencies', 'v1', key, 'json', '&appid=' + appid, function(data) {
+    if (data.response.success == 0) {
+      callback(new Error(data.response.message));
+    } else {
+      callback(undefined, data);
+    }
+  })
+}
+
 module.exports = {
   AppIDs: IDs.AppIDs,
   QualityIDs: IDs.Quality,
