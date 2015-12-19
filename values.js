@@ -1,10 +1,10 @@
-AppIDs = {
+var AppIDs = {
 	TF2: 440,
 	CSGO: 730,
 	Steam: 753
-}
+};
 
-Quality = {
+var Quality = {
 	Normal: 0,
 	Genuine: 1,
 	UNUSED_RARITY2: 2,
@@ -20,10 +20,10 @@ Quality = {
 	Haunted: 13,
 	UNUSED_COMPLETED: 12,
 	Collectors: 14
-}
+};
 
 //Unlike Quality, Unusual effects have little logic in order of numbery-thingies. Be careful with using index to look up stuff.
-UnusualEffects = {
+var UnusualEffects = {
 	"Particle 1": 1,
 	"Flying Bits": 2,
 	"Nemesis Burst": 3,
@@ -119,7 +119,7 @@ UnusualEffects = {
 	"Cool": 702,
 	"Energy Orb": 704,
 	"Showstopper": 3001,
-	"Showstopper": 3002, //yes it shows up twice no its not a typo
+	//"Showstopper": 3002, //yes it shows up twice no its not a typo
 	"Holy Grail": 3003,
 	"'72": 3004, //again, not a typo, '72 is the effect
 	"Fountain of Delight": 3005,
@@ -130,7 +130,7 @@ UnusualEffects = {
 	"Mega Strike": 3010,
 	"Haunted Phantasm": 3011,
 	"Ghastly Ghosts": 3012
-}
+};
 
 module.exports = {
 	Quality: Quality,
