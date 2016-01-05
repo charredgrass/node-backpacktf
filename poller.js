@@ -1,4 +1,7 @@
 function Poller(method) {
+  if (typeof method !== "function") {
+    throw new TypeError("Constructor must be passed a function!");
+  }
 	this.queryMethod = method;
 	this.storage = null;
 	this.interval = null;
@@ -14,6 +17,9 @@ Poller.prototype.queryAndStore = function() {
 }
 
 Poller.prototype.start = function(timeInterval) {
+  if (timeInterval < 0) {
+    throw new RangeError("time passed to start method must be physically possible");
+  }
 	this.interval = setInterval(this.queryMethod,timeInterval);
   return this.interval;
 }
@@ -23,6 +29,9 @@ Poller.prototype.stop = function() {
 }
 
 Poller.prototype.startAndStore = function(timeInterval) {
+  if (timeInterval < 0) {
+    throw new RangeError("time passed to start method must be physically possible");
+  }
   this.interval = setInterval(function() {
     this.storage = this.queryMethod();
   }, timeInterval);
