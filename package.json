@@ -1,6 +1,6 @@
 {
 	"name": "backpacktf",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "backpack.tf data-grabber for node",
 	"keywords": ["steam", "http"],
 	"homepage": "github.com/charredgrass/node-backpacktf",

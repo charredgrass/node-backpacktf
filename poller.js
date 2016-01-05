@@ -16,6 +16,12 @@ Poller.prototype.stop = function() {
   clearInterval(this.interval);
 }
 
+Poller.prototype.startAndStore = function(timeInterval) {
+  this.interval = setInterval(function() {
+    this.storage = this.queryMethod();
+  }, timeInterval);
+}
+
 module.exports = {
   Poller: Poller
 }
