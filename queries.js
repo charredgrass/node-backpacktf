@@ -109,3 +109,10 @@ function getCurrencies(key, appid, callback) {
     }
   })
 }
+
+module.exports = {
+  getUser: getUser,
+  getCurrencies: getCurrencies,
+  getBPPrices: getBPPrices,
+  getMarketPrices: getMarketPrices
+}
