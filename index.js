@@ -15,7 +15,7 @@ function DataCache(key) {
         }
       });
     })
-  },{
+  }, {
     query: "marketPrices730",
     poller: new Poller(function(callback) {
       methods.getMarketPrices(key, 730, function(err, data) {
@@ -48,5 +48,6 @@ module.exports = {
   getMarketPrices: methods.getMarketPrices,
   getBPPrices: methods.getBPPrices,
   Poller,
-  DataCache
+  DataCache,
+  startAutomatic: methods.startAutomatic
 };
