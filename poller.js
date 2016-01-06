@@ -39,8 +39,7 @@ Poller.prototype.retrieveStorage = function() {
 
 //if method that needs to be called is async
 //use this instead of Poller.prototype.startAndStore
-//make that method have 1 argument that's a callback and calls it w/ the data to be stored as an argument
-
+//make that method have 1 argument that's a callback and calls it w/ the data to be stored as an argument 
 Poller.prototype.startAsyncStore = function(timeInterval) {
   if (timeInterval < 0) {
     throw new RangeError("time passed to start method must be physically possible");
@@ -48,11 +47,10 @@ Poller.prototype.startAsyncStore = function(timeInterval) {
   this.interval = setInterval(function() {
     this.queryMethod(function(data) {
       this.storage = data;
-    })
+    });
   }, timeInterval);
   return this.interval;
-}
-
+};
 
 module.exports = {
   Poller

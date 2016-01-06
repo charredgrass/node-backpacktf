@@ -14,7 +14,7 @@ function DataCache(key) {
           callback(data);
         }
       })
-    });
+    })
   }];
 }
 
