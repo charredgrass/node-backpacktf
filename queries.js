@@ -1,6 +1,6 @@
 var http = require("http");
-var fs = require("fs");
-var IDs = require("./values.js");
+//var fs = require("fs");
+//var IDs = require("./values.js");
 
 /*
     backpacktf.queryAPI()
@@ -27,7 +27,7 @@ function queryAPI(method, v, key, format, adds, callback) {
     });
     res.on("end", function() {
       callback(JSON.parse(body));
-    })
+    });
   });
 }
 
@@ -102,7 +102,7 @@ function getUser(key, steamids, callback) {
 
 function getCurrencies(key, appid, callback) {
   queryAPI("IGetCurrencies", "v1", key, "json", "&appid=" + appid, function(data) {
-    if (data.response.success == 0) {
+    if (data.response.success === 0) {
       callback(new Error(data.response.message));
     } else {
       callback(null, data);
@@ -111,8 +111,8 @@ function getCurrencies(key, appid, callback) {
 }
 
 module.exports = {
-  getUser: getUser,
-  getCurrencies: getCurrencies,
-  getBPPrices: getBPPrices,
-  getMarketPrices: getMarketPrices
-}
+  getUser,
+  getCurrencies,
+  getBPPrices,
+  getMarketPrices
+};

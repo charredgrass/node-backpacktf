@@ -133,7 +133,7 @@ var UnusualEffects = {
 };
 
 module.exports = {
-	Quality: Quality,
-	UnusualEffects: UnusualEffects,
-	AppIDs: AppIDs
-}
+	Quality,
+	UnusualEffects,
+	AppIDs
+};

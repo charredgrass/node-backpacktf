@@ -43,5 +43,5 @@ Poller.prototype.retrieveStorage = function() {
 }
 
 module.exports = {
-  Poller: Poller
-}
+  Poller
+};
