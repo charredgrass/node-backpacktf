@@ -3,6 +3,20 @@
 var IDs = require("./values.js");
 var methods = require("./queries.js");
 var poller = require("./poller.js");
+var Poller = poller.Poller;
+
+function DataCache(key) {
+  this.cachedData = [{
+    prices: "marketPrices440",
+    poller: new Poller(function(callback) {
+      methods.getMarketPrices(key, 440, function(err, data) {
+        if (!err) {
+          callback(data);
+        }
+      })
+    });
+  }];
+}
 
 module.exports = {
   AppIDs: IDs.AppIDs,
