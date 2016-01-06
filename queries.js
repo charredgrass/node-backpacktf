@@ -110,9 +110,45 @@ function getCurrencies(key, appid, callback) {
   });
 }
 
+/*
+    backpacktf.startAutomatic()
+    Tells backpack.tf that your SteamID should have the lightning icon. Cool.
+    Parameters:
+
+*/
+
+function startAutomatic(version, steamid, token, callback) {
+  var request_params = {
+    uri: backpackurl + "/api/IAutomatic/IHeartBeat/",
+    form: {
+      method: "alive",
+      version,
+      steamid,
+      token
+    },
+    json: true,
+    method: "POST"
+  };
+  request(request_params, function(err, response, body) {
+    //uh yeah. probably should return a status code or something
+    if (err) {
+      throw err;
+    } else if (response.statusCode !== 200) {
+      throw new Error("Something went wrong. Status code " + response.statusCode);
+    } else {
+      if (body.success) {
+        callback();
+      } else {
+        throw new Error("Invalid Token");
+      }
+    }
+  });
+}
+
 module.exports = {
   getUser,
   getCurrencies,
   getBPPrices,
-  getMarketPrices
+  getMarketPrices,
+  startAutomatic
 };
