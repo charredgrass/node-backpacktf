@@ -107,7 +107,7 @@ function getCurrencies(key, appid, callback) {
     } else {
       callback(null, data);
     }
-  })
+  });
 }
 
 module.exports = {

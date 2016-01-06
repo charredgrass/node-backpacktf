@@ -9,12 +9,12 @@ function Poller(method) {
 
 Poller.prototype.queryThis = function() {
 	return this.queryMethod();
-}
+};
 
 Poller.prototype.queryAndStore = function() {
   this.storage = this.queryMethod();
   return this.storage;
-}
+};
 
 Poller.prototype.start = function(timeInterval) {
   if (timeInterval < 0) {
@@ -22,11 +22,11 @@ Poller.prototype.start = function(timeInterval) {
   }
 	this.interval = setInterval(this.queryMethod,timeInterval);
   return this.interval;
-}
+};
 
 Poller.prototype.stop = function() {
   clearInterval(this.interval);
-}
+};
 
 Poller.prototype.startAndStore = function(timeInterval) {
   if (timeInterval < 0) {
@@ -36,11 +36,11 @@ Poller.prototype.startAndStore = function(timeInterval) {
     this.storage = this.queryMethod();
   }, timeInterval);
   return this.interval;
-}
+};
 
 Poller.prototype.retrieveStorage = function() {
   return this.storage;
-}
+};
 
 module.exports = {
   Poller
