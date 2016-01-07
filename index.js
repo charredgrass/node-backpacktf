@@ -49,5 +49,6 @@ module.exports = {
   getBPPrices: methods.getBPPrices,
   Poller,
   DataCache,
-  startAutomatic: methods.startAutomatic
+  startAutomatic: methods.startAutomatic,
+  offerAccepted: methods.offerAccepted
 };

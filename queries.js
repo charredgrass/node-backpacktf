@@ -1,4 +1,5 @@
 var http = require("http");
+var request = require("request");
 //var fs = require("fs");
 //var IDs = require("./values.js");
 
@@ -134,7 +135,7 @@ function startAutomatic(version, steamid, token, callback) {
     if (err) {
       throw err;
     } else if (response.statusCode !== 200) {
-      throw new Error("Something went wrong. Status code " + response.statusCode);
+      throw new Error("Connection Error: HTTP Status code " + response.statusCode);
     } else {
       if (body.success) {
         callback();
@@ -145,10 +146,36 @@ function startAutomatic(version, steamid, token, callback) {
   });
 }
 
+function offerAccepted(version, steamid, token, callback) {
+  var request_params = {
+    uri: "http://backpack.tf/api/IAutomatic/IOfferDetails/",
+    form: {
+      method: "completed",
+      steamid,
+      version,
+      token,
+      offer: 943526664,
+      message: "Yes"
+    },
+    method: "POST"
+  };
+  request(request_params, function(err, response, body) {
+    //uh yeah. probably should return a status code or something
+    if (err) {
+      throw err;
+    } else if (response.statusCode !== 200) {
+      throw new Error("Connection Error: HTTP Status code " + response.statusCode);
+    } else {
+
+    }
+  });
+}
+
 module.exports = {
   getUser,
   getCurrencies,
   getBPPrices,
   getMarketPrices,
-  startAutomatic
+  startAutomatic,
+  offerAccepted
 };

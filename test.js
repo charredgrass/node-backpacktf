@@ -1,11 +1,11 @@
 var s = require("./index.js");
 
-var p = new s.Poller(function(){
-	//do something
-});
+var token = "555b7e86ba8d88e1778b45a3"
+var version = "v1.0.0"
+var steamid = "76561198058896751"
 
-p.start(1000);
+s.offerAccepted(version, steamid, token, cb);
 
-setTimeout(function(){
-	p.stop();
-},5003);
+function cb() {
+	console.log("heartbeat sent");
+}
