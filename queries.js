@@ -166,7 +166,8 @@ function offerAccepted(steamid, token, callback) {
     } else if (response.statusCode !== 200) {
       throw new Error("Connection Error: HTTP Status code " + response.statusCode);
     } else {
-
+      //success!
+      callback();
     }
   });
 }
