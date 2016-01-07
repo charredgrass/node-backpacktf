@@ -119,7 +119,7 @@ function getCurrencies(key, appid, callback) {
 */
 
 function startAutomatic(steamid, token, callback) {
-  var request_params = {
+  var requestParams = {
     uri: "http://backpack.tf/api/IAutomatic/IHeartBeat/",
     form: {
       method: "alive",
@@ -130,7 +130,7 @@ function startAutomatic(steamid, token, callback) {
     json: true,
     method: "POST"
   };
-  request(request_params, function(err, response, body) {
+  request(requestParams, function(err, response, body) {
     //uh yeah. probably should return a status code or something
     if (err) {
       throw err;
@@ -147,7 +147,7 @@ function startAutomatic(steamid, token, callback) {
 }
 
 function offerAccepted(steamid, token, callback) {
-  var request_params = {
+  var requestParams = {
     uri: "http://backpack.tf/api/IAutomatic/IOfferDetails/",
     form: {
       method: "completed",
@@ -159,7 +159,7 @@ function offerAccepted(steamid, token, callback) {
     },
     method: "POST"
   };
-  request(request_params, function(err, response, body) {
+  request(requestParams, function(err, response, body) {
     //uh yeah. probably should return a status code or something
     if (err) {
       throw err;
