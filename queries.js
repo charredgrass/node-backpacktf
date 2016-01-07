@@ -119,7 +119,7 @@ function getCurrencies(key, appid, callback) {
 
 function startAutomatic(version, steamid, token, callback) {
   var request_params = {
-    uri: backpackurl + "/api/IAutomatic/IHeartBeat/",
+    uri: "http://backpack.tf/api/IAutomatic/IHeartBeat/",
     form: {
       method: "alive",
       version,
