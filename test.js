@@ -3,4 +3,8 @@ var backpacktf = require("./index.js"); //replace with backpacktf if not running
 var token = "";
 var steamid = "76561198058896751";
 
-backpacktf.startAutomatic(steamid, token, callback); //Gives you the pretty lightning bolt.
+var interval = setInterval(function() {
+	backpacktf.startAutomatic(steamid, token, function() {
+		console.log("Heartbeat sent to backpack.tf");
+	}); //Gives you the pretty lightning bolt.
+}, 1000 * 60 * 5);
