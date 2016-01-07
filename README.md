@@ -60,9 +60,13 @@ Identical to `backpacktf.getMarketPrices`, but instead retrieves backpack.tf com
 
 ###getCurrencies(key, appID, callback)
 
+*Currently disabled*
+
 Identical to `backpacktf.getMarketPrices`, but instead retrieves currency data from backpack.tf.
 
 ###getUser(key, steamIDs, callback)
+
+*Currently disabled* This will be implemented more in the next update.
 
 A thin wrapper for [this](http://backpack.tf/api/users) API method. Returns data on backpack.tf-generated backpack value, bp.tf bans, SteamRep marks, and Steam/VAC/Trade bans.
 
@@ -70,4 +74,16 @@ A thin wrapper for [this](http://backpack.tf/api/users) API method. Returns data
 * `steamIDs` - a comma-delimited list of Steam IDs.
 * Callback just returns an Error object (undefined on success), and on success, the Object response from the backpack.tf API. I will write a method to easily work with this data eventually.
 
+###startAutomatic(steamid, token, callback)
 
+Sends a heartbeat to the backpack.tf servers, telling them to add the lightning symbol to each of your trades denoting that they are automatic. Use this only when accepting trade offers automatically.
+
+*`steamid` - your Steam64 ID
+*`token` - backpack.tf third-party program token, found [here](http://backpack.tf/my/preferences) under "Advanced"
+*Callback is called when backpack.tf responds. Will not be called if there was an error reaching bp.tf servers and will instead throw an `Error`.
+
+###offerAccepted(steamid, token, callback)
+
+Gives you the "Lightning Fast" badge on backpack.tf.
+
+Parameters are the same as `startAutomatic()`.

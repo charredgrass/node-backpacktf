@@ -118,12 +118,12 @@ function getCurrencies(key, appid, callback) {
 
 */
 
-function startAutomatic(version, steamid, token, callback) {
+function startAutomatic(steamid, token, callback) {
   var request_params = {
     uri: "http://backpack.tf/api/IAutomatic/IHeartBeat/",
     form: {
       method: "alive",
-      version,
+      version: "1.0.0",
       steamid,
       token
     },
@@ -146,16 +146,16 @@ function startAutomatic(version, steamid, token, callback) {
   });
 }
 
-function offerAccepted(version, steamid, token, callback) {
+function offerAccepted(steamid, token, callback) {
   var request_params = {
     uri: "http://backpack.tf/api/IAutomatic/IOfferDetails/",
     form: {
       method: "completed",
       steamid,
-      version,
+      version: "1.0.0",
       token,
-      offer: 943526664,
-      message: "Yes"
+      offer: 943526664, //hard-coded in, doesn't actually matter i think
+      message: "Yes" //same ^^
     },
     method: "POST"
   };
