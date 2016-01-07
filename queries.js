@@ -133,14 +133,14 @@ function startAutomatic(steamid, token, callback) {
   request(requestParams, function(err, response, body) {
     //uh yeah. probably should return a status code or something
     if (err) {
-      throw err;
+      callback(err);
     } else if (response.statusCode !== 200) {
-      throw new Error("Connection Error: HTTP Status code " + response.statusCode);
+      callback(new Error("Connection Error: HTTP Status code " + response.statusCode));
     } else {
       if (body.success) {
         callback();
       } else {
-        throw new Error("Invalid Token");
+        callback(new Error("Invalid Token"));
       }
     }
   });
@@ -162,9 +162,9 @@ function offerAccepted(steamid, token, callback) {
   request(requestParams, function(err, response, body) {
     //uh yeah. probably should return a status code or something
     if (err) {
-      throw err;
+      callback(err);
     } else if (response.statusCode !== 200) {
-      throw new Error("Connection Error: HTTP Status code " + response.statusCode);
+      callback(new Error("Connection Error: HTTP Status code " + response.statusCode));
     } else {
       //success!
       callback();

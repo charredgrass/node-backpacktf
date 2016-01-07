@@ -1,6 +1,6 @@
 {
 	"name": "backpacktf",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "backpack.tf data-grabber for node",
 	"keywords": ["steam", "http"],
 	"homepage": "github.com/charredgrass/node-backpacktf",
@@ -12,6 +12,6 @@
 	},
 	"main": "./index.js",
 	"dependencies": {
-		"request": ">2.67.0"
+		"request": ">=2.67.0"
 	}
 }

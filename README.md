@@ -50,7 +50,7 @@ These are the values that is used in TF2 schema for the unusual quality IDs. For
 
 ###ErrorCodes
 
-This is the only one that's actually an enum (the others are objects). It contains the data from [SteamKit](https://github.com/SteamRE/SteamKit) for .NET about Steam Error codes - not necessarilly related to backpack.tf but useful for telling users what the problem is in any trade bot thing.
+This contains the data from [SteamKit](https://github.com/SteamRE/SteamKit) for .NET about Steam Error codes - not necessarilly related to backpack.tf but useful for telling users what the problem is in any trade bot thing.
 
 #Methods
 
