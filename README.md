@@ -16,11 +16,12 @@ Initialize module like so:
 var backpacktf = require('backpacktf');
 ```
 
-And call methods off `backpacktf`.
+And call methods off `backpacktf`. When passing to parameters, SteamIDs and backpack.tf API keys should always be Strings.
 
 To use methods from this module, you need a [backpack.tf API key](http://backpack.tf/api/register). Also keep in mind that most of the methods will cache their results, and have a varying time limit (additional details can be found [here](http://backpack.tf/developer)).
 
 [backpacktf on npmjs.com](https://www.npmjs.com/package/backpacktf)
+
 
 #Enums
 
@@ -66,7 +67,7 @@ Identical to `backpacktf.getMarketPrices`, but instead retrieves currency data f
 
 ###getUser(key, steamIDs, callback)
 
-*Currently disabled* This will be implemented more in the next update.
+*Currently disabled* - this will be implemented more in the next update.
 
 A thin wrapper for [this](http://backpack.tf/api/users) API method. Returns data on backpack.tf-generated backpack value, bp.tf bans, SteamRep marks, and Steam/VAC/Trade bans.
 
@@ -78,9 +79,9 @@ A thin wrapper for [this](http://backpack.tf/api/users) API method. Returns data
 
 Sends a heartbeat to the backpack.tf servers, telling them to add the lightning symbol to each of your trades denoting that they are automatic. Use this only when accepting trade offers automatically.
 
-*`steamid` - your Steam64 ID
-*`token` - backpack.tf third-party program token, found [here](http://backpack.tf/my/preferences) under "Advanced"
-*Callback is called when backpack.tf responds. Will not be called if there was an error reaching bp.tf servers and will instead throw an `Error`.
+* `steamid` - your Steam64 ID
+* `token` - backpack.tf third-party program token, found [here](http://backpack.tf/my/preferences) under "Advanced"
+* Callback is called when backpack.tf responds. Will not be called if there was an error reaching bp.tf servers and will instead throw an `Error`.
 
 ###offerAccepted(steamid, token, callback)
 
