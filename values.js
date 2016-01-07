@@ -1,7 +1,8 @@
 var AppIDs = {
 	TF2: 440,
 	CSGO: 730,
-	Steam: 753
+	Steam: 753,
+	Dota2: 570
 };
 
 var Quality = {
