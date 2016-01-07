@@ -48,6 +48,10 @@ evaluates to `"Unique"`.
 
 These are the values that is used in TF2 schema for the unusual quality IDs. For example, `backpacktf.UnusualEffects["Burning Flames"]` evaluates to `13`.
 
+###ErrorCodes
+
+This is the only one that's actually an enum (the others are objects). It contains the data from [SteamKit](https://github.com/SteamRE/SteamKit) for .NET about Steam Error codes - not necessarilly related to backpack.tf but useful for telling users what the problem is in any trade bot thing.
+
 #Methods
 
 ###getMarketPrices(key, appID, callback)

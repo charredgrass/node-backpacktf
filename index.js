@@ -45,6 +45,7 @@ module.exports = {
   AppIDs: IDs.AppIDs,
   QualityIDs: IDs.Quality,
   UnusualIDs: IDs.UnusualEffects,
+  ErrorCodes: IDs.ErrorCodes,
   getMarketPrices: methods.getMarketPrices,
   getBPPrices: methods.getBPPrices,
   Poller,
