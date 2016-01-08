@@ -90,7 +90,7 @@ Sends a heartbeat to the backpack.tf servers, telling them to add the lightning 
 
 * `steamid` - your Steam64 ID
 * `token` - backpack.tf third-party program token, found [here](http://backpack.tf/my/preferences) under "Advanced"
-* Callback is called when backpack.tf responds. Will not be called if there was an error reaching bp.tf servers and will instead throw an `Error`.
+* Callback is called when backpack.tf responds. Called with an Error object on failure, no parameters on success.
 
 ###offerAccepted(steamid, token, callback)
 
