@@ -1,7 +1,7 @@
 # node-backpacktf
 
-[![Liscence](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/charredgrass/node-backpacktf/blob/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/backpacktf.svg)](https://www.npmjs.com/package/backpacktf)
+[![Liscence](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/charredgrass/node-backpacktf/blob/master/LICENSE "GNUv2 Software Liscence")
+[![npm version](https://img.shields.io/npm/v/backpacktf.svg)](https://www.npmjs.com/package/backpacktf "npm install backpacktf")
 [![npm downloads](https://img.shields.io/npm/dm/backpacktf.svg)](https://npmjs.com/package/backpacktf "backpacktf on npm")
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/79bec21f35894058b39a7720c35bf22a)](https://www.codacy.com/app/charredgrass/node-backpacktf "node-backpacktf on Codacy")
 
