@@ -86,7 +86,7 @@ A thin wrapper for [this](http://backpack.tf/api/users) API method. Returns data
 
 ###startAutomatic(steamid, token, callback)
 
-Sends a heartbeat to the backpack.tf servers, telling them to add the lightning symbol to each of your trades denoting that they are automatic. Use this only when accepting trade offers automatically.
+Sends a heartbeat to the backpack.tf servers, telling them to add the lightning symbol to each of your trades denoting that they are automatic. **Use this only when accepting trade offers automatically.** Failure to accept offers when you have the lightning symbol can result in a ban from backpack.tf! Use at your own risk!
 
 * `steamid` - your Steam64 ID
 * `token` - backpack.tf third-party program token, found [here](http://backpack.tf/my/preferences) under "Advanced"
