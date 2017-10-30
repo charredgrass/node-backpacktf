@@ -46,7 +46,7 @@ function queryAPI(method, v, key, format, adds, callback) {
 */
 
 function getMarketPrices(key, appid, callback) {
-  queryAPI("IGetMarketPrices", "v1", key, "json", "&appid=" + appid, function(data) {
+  queryAPI("IGetMarketPrices", "v4", key, "json", "&appid=" + appid, function(data) {
     if (data.response.success === 0) {
       callback(new Error(data.response.message));
     } else {
