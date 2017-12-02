@@ -1,9 +1,10 @@
 {
 	"name": "backpacktf",
-	"version": "0.2.1",
-	"description": "backpack.tf data-grabber for node",
+	"version": "0.3",
+	"description": "backpack.tf api wrapper for node.js",
 	"keywords": ["steam", "http"],
-	"homepage": "github.com/charredgrass/node-backpacktf",
+	"homepage": "https://github.com/charredgrass/node-backpacktf",
+	"bugs": {"url":"https://github.com/charredgrass/node-backpacktf/issues"},
 	"license": "GPL-2.0",
 	"author": {
 		"name": "Maxwell Chow",
@@ -13,5 +14,8 @@
 	"main": "./index.js",
 	"dependencies": {
 		"request": ">=2.67.0"
+	},
+	"scripts": {
+		"test": "node ./tests/test.js"
 	}
 }

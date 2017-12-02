@@ -18,18 +18,19 @@ var request = require("request");
           data: an Object containing the response
     Not included in module.exports.
  */
-
 function queryAPI(method, v, key, format, adds, callback) {
-  var urltouse = "http://backpack.tf/api/" + method + "/" + v + "/?key=" + key + "&format=" + format + adds;
-  http.get(urltouse, function(res) {
-    var body = "";
-    res.on("data", function(chunk) {
-      body += chunk;
-    });
-    res.on("end", function() {
-      callback(JSON.parse(body));
-    });
-  });
+  var urltouse = "http://backpack.tf/api/" + method + "/" + v + "?key=" + key + "&format=" + format + adds;
+  try {
+    request(urltouse, function(err,res, body) {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, JSON.parse(body));
+      }
+    })
+  } catch (err) {
+    callback(err);
+  }
 }
 
 /*
@@ -46,7 +47,7 @@ function queryAPI(method, v, key, format, adds, callback) {
 */
 
 function getMarketPrices(key, appid, callback) {
-  queryAPI("IGetMarketPrices", "v4", key, "json", "&appid=" + appid, function(data) {
+  queryAPI("IGetMarketPrices", "v4", key, "json", "&appid=" + appid, function(err, data) {
     if (data.response.success === 0) {
       callback(new Error(data.response.message));
     } else {
@@ -55,8 +56,9 @@ function getMarketPrices(key, appid, callback) {
   });
 }
 
+
 /*
-    backpacktf.getBPPrices()
+    backpacktf.getCommunityPrices()
     Retrieves backpack.tf price data for specified appid.
     Parameters:
       key: backpack.tf api key
@@ -68,10 +70,15 @@ function getMarketPrices(key, appid, callback) {
           data: an Object containing the response
 */
 
-function getBPPrices(key, appid, callback) {
-  queryAPI("IGetPrices", "v4", key, "json", "&appid=" + appid, function(data) {
-    if (data.response.success === 0) {
-      callback(new Error(data.response.message));
+function getCommunityPrices(key, appid, callback) {
+  queryAPI("IGetPrices", "v4", key, "json", "&appid=" + appid, function(err, data) {
+    // if (data.response.success === 0) {
+    //   callback(new Error(data.response.message));
+    // } else {
+    //   callback(null, data);
+    // }
+    if (err) { 
+      callback(err);
     } else {
       callback(null, data);
     }
@@ -175,7 +182,7 @@ function offerAccepted(steamid, token, callback) {
 module.exports = {
   getUser,
   getCurrencies,
-  getBPPrices,
+  getCommunityPrices,
   getMarketPrices,
   startAutomatic,
   offerAccepted

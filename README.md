@@ -4,11 +4,6 @@
 [![npm version](https://img.shields.io/npm/v/backpacktf.svg)](https://www.npmjs.com/package/backpacktf "npm install backpacktf")
 [![npm downloads](https://img.shields.io/npm/dm/backpacktf.svg)](https://npmjs.com/package/backpacktf "backpacktf on npm")
 
-[![paypal](https://img.shields.io/badge/paypal-donate%20(via%20paypal.me)-blue.svg)](https://www.paypal.me/charredgrass "Donate via PayPal.me")
-[![Steam Items Donate Button](https://img.shields.io/badge/donate-steam%20items-yellowgreen.svg)](https://steamcommunity.com/tradeoffer/new/?partner=98631023&token=l-DaiQbQ "Donate Steam Items")
-[![paypal donate](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KNZK2U7Q2JY8J&lc=US&item_name=Charred%20Open%20Source%20Projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted "Doante via PayPal donate button")
-
-
 A node.js wrapper to get data from the backpack.tf API.
 
 # Usage
@@ -17,7 +12,7 @@ Install this module from npm using `npm install backpacktf`.
 Initialize module like so:
 
 ```JavaScript
-var backpacktf = require('backpacktf');
+const backpacktf = require("backpacktf");
 ```
 
 And call methods off `backpacktf`. When passing to parameters, SteamIDs and backpack.tf API keys should always be Strings.
@@ -61,7 +56,19 @@ Retrieves Steam Community Market data in a readable format containing all items 
 * `appID` - Steam's numeric identifier for the game (i.e. 440 for TF2 and 730 for CS:GO, alternatively `backpacktf.AppIDs.TF2`, see AppID enums)
 * Callback is called with 2 parameters: an Error object (undefined on success), and an Object containing response data.
 
-It is strongly reccomended that you save this data to a local JSON file, or at least a local. It is not something you want to download each time you need the data (and there is a time limit on the method).
+It is strongly recommended that you save this data to a local JSON file, or at least a local. It is not something you want to download each time you need the data (and there is a time limit on the method).
+
+For example:
+
+```js
+backpacktf.getMarketPrices("insert-backpacktf-api-key", "440", function(err, data) {
+	if (err) {
+		console.log("Error: " + err.message);
+	} else {
+		console.log(data); //You probably don't actually want to do this since there is a LOT of data.
+	}
+});
+```
 
 ### getBPPrices(key, appID, callback)
 

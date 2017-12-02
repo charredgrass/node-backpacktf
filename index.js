@@ -46,10 +46,10 @@ module.exports = {
   QualityIDs: IDs.Quality,
   UnusualIDs: IDs.UnusualEffects,
   ErrorCodes: IDs.ErrorCodes,
-  getMarketPrices: methods.getMarketPrices,
-  getBPPrices: methods.getBPPrices,
   Poller,
   DataCache,
+  getMarketPrices: methods.getMarketPrices,
+  getCommunityPrices: methods.getCommunityPrices,
   startAutomatic: methods.startAutomatic,
   offerAccepted: methods.offerAccepted
 };
