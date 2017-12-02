@@ -1,6 +1,6 @@
 {
 	"name": "backpacktf",
-	"version": "0.3",
+	"version": "0.3.0",
 	"description": "backpack.tf api wrapper for node.js",
 	"keywords": ["steam", "http"],
 	"homepage": "https://github.com/charredgrass/node-backpacktf",
